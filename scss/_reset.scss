@@ -1,0 +1,29 @@
+html{
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+    list-style: none;
+}
+body{
+    margin: 0;
+    padding: 0;
+    line-height:1;
+}
+h1,h2,h3,h4,h5,h6,p,ul,li{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+
+img{
+    display: block;
+    // max-width: 100%;
+}

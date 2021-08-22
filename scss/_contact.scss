@@ -1,0 +1,95 @@
+.contact{
+    padding: 100px 0;
+    background-image: url(../images/contact-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+.contact-form {
+    background-color: #fff;
+    padding: 50px 60px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.contact-form__description {
+    &-title{
+        margin-bottom: 10px;
+    }
+    &-text{
+        font-family: "TT Norms Medium";
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        color: #171717;
+        span{
+            color: $purple;
+        }
+    }
+}
+.contact-form__data {
+    &-input{
+        padding: 25px 30px;
+        border-radius: 10px;
+        background-color:#f5f5f5;
+        border: none;
+    }
+    &-input::placeholder{
+        font-family: "TT Norms Medium";
+        font-size: 16px;
+        line-height: 19px;
+        color: #171717;
+    }
+    &-btn{
+        border: none;
+        font-family: "TT Norms Medium";
+        font-size: 16px;
+        line-height: 19px;
+        color: #FFFFFF;
+        background-color: $purple;
+        border-radius: 15px;
+        padding: 25px 30px;
+        margin-left: 30px;
+    }
+}
+
+@media(max-width:1040px){
+    .contact-form{
+        flex-direction: column;
+    }
+    .contact-form__description{
+        text-align: center;
+        margin-bottom: 35px;
+    }
+}
+
+
+@media(max-width:595px){
+    .contact-form__data{
+        width: 100%;
+
+        &-input{
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        &-btn{
+            margin-left: 0;
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width:420px) {
+    .contact-form__data{
+        width: 100%;
+
+        &-input,
+        &-btn{
+            padding: 19px;
+        }
+    }
+ }

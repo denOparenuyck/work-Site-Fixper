@@ -1,0 +1,144 @@
+.container{
+    max-width: 1170px;
+    margin: 0 auto;
+    padding:0 5px;
+ }
+
+ body{
+    font-family: "TT Norms Medium";
+    font-weight: 500;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+ }
+ .logo {
+   margin-right: 75px;
+}
+
+.descrition__section{
+   font-family: "TT Norms Bold";
+   font-weight: bold;
+   font-size: 13px;
+   line-height: 15px;
+   letter-spacing: 0.05em;
+   text-transform: uppercase;
+   color: $purple;
+}
+
+.title{
+   font-family: "TT Norms Bold";
+   font-weight: bold;
+   font-size: 45px;
+   line-height: 40px;
+   letter-spacing: -0.015em;
+   color: #000000;
+}
+
+
+@media (max-width:420px) {
+   .title{
+      font-size: 30px;
+   }
+}
+
+
+
+
+
+.panel-control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.panel-control__dots-wrapper{
+   width: 112px;
+   overflow: hidden;
+   padding-left: 10px;
+}
+.panel-control__dots {
+   display: flex;
+   align-items: center;
+   height: 30px;
+   li{
+      flex: 0 0 auto;
+   }
+}
+.panel-control__dots-item:not(:first-child){
+    margin-left: 20px;
+}
+.panel-control__dots-item {
+    width: 8px;
+    height: 8px;
+    background-color: $purple;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.panel-control__dots-item--active{
+    position: relative;
+
+    &::before{
+        content: "";
+        position: absolute;
+        width: 28px;
+        height: 28px;
+        border: 2px solid $purple;
+        border-radius: 100%;
+    }
+}
+
+.panel-control__button {
+    &-prev, &-next{
+        border: 0;
+        background-color: transparent;
+        font-size: 16px;
+        line-height: 19px;
+        color: #000000;
+        cursor: pointer;
+    }
+}
+.panel-control__button-prev {
+    margin-right: 40px;
+}
+.panel-control__button-next {
+    color: $purple;
+    padding-right: 50px;
+    position: relative;
+
+    &::after{
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 8px;
+        background-image: url(../images/arrow-next.svg);
+        background-repeat: no-repeat;
+        width: 35px;
+        height: 20px;
+    }
+}
+
+
+@media (max-width:1160px) {
+   .panel-control__dots-wrapper {
+      width: 170px;
+  }
+}
+
+@media (max-width:550px) {
+   .panel-control{
+      flex-direction: column;
+   }
+   .panel-control__dots-wrapper {
+      width: 310px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .panel-control__dots-item:not(:first-child){
+   margin-left: 15px;
+}
+}

@@ -1,0 +1,84 @@
+.recall{
+    padding: 100px 0;
+}
+
+.recall-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.recall-slider {
+    overflow: hidden;
+    margin-bottom: 35px;
+}
+
+.recall-slider__inner{
+    display: flex;
+    align-items: flex-start;
+    transition: .6s;
+}
+
+.recall-slider__item {
+    background: $bg-gradient;
+    padding: 75px 50px;
+    height: 417px;
+    border: 15px solid #fff;
+}
+.recall-slider__item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 35px;
+    max-width: 365px;
+}
+.recall-slider__item-header-data-name,.recall-slider__item-header-data-date {
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+}
+.recall-slider__item-header-data-date {
+    font-size: 16px;
+    margin-top: 8px;
+}
+.recall-slider__item-body-text {
+    font-family: 'TT Norms';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: #000000;
+}
+
+
+
+
+@media (max-width:1160px){
+    .recall-slider__item{
+        height: 340px;
+        overflow-y: auto;
+    }
+}
+
+
+@media (max-width:520px){
+    .recall-slider__item{
+        padding: 30px 30px;
+        height: 360px;
+    }
+    .recall-slider__item-header{
+        justify-content: space-between;
+        max-width: 100%;
+    }
+    .recall-slider__item-header-data-name{
+        font-size: 18px;
+    }
+    .recall-slider__item-body-text,.recall-slider__item-header-data-date{
+        font-size: 16px;
+    }
+}
+
+@media (max-width:405px){
+    .recall-slider__item-header{
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+}

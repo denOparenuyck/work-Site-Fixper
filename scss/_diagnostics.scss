@@ -1,0 +1,376 @@
+.diagnostics{
+    background-color: #fafafa;
+    padding: 100px 0 210px;
+    position: relative;
+}
+.diagnostics__inner{
+    position: relative;
+    width: 100%;
+    max-width: 1900px;
+    margin: 0 auto;
+}
+
+.diagnostics__header{
+    position: relative;
+    z-index: 1;
+}
+
+.diagnostics-title{
+    margin: 15px 0 50px;
+}
+.diagnostics-content__list {
+    width: 630px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+    margin-bottom: 30px;
+}
+.diagnostics-content__list-item-btn{
+    font-family: "TT Norms Medium";
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: $purple;
+
+    border: 1px solid $purple;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all .5s;
+    
+    padding: 15px 29px;
+    margin-bottom: 20px;
+    margin-right: 15px;
+}
+
+.diagnostics-box{
+    position: absolute;
+    padding: 100px 0;
+    top: 0px;
+    right: 100%;
+    background-color: #fafafa;
+    z-index: 3;
+    transition: .6s;
+}
+.diagnostics-box--active{
+    position: absolute;
+    padding: 100px 0;
+    top:0px;
+    right: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: #fafafa;
+    transition: .6s;
+    z-index: 2;
+}
+
+
+.diagnostics-box__inner{
+    max-width: 1900px;
+    margin: 0 auto;
+    position: relative;
+}
+.diagnostics-box__header--back-btn{
+    margin-bottom: 15px;
+    padding-left: 75px;
+    position: relative;
+    cursor: pointer;
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 0;
+        background-image: url(../images/arrow-problem.svg);
+        background-repeat: no-repeat;
+        width: 50px;
+        height: 20px;
+    }
+}
+
+.diagnostics-box__header-title{
+    margin-bottom: 50px;
+}
+
+
+.diagnostics-box__percent{
+    position: relative;
+    width: 386px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:not(:first-child){
+        margin-top: 35px;
+    }
+    &:last-child{
+        margin-bottom: 50px;
+    }
+
+    .percent{
+        position: relative;
+        width: 100px;
+        height: 100px;
+
+    }
+
+    .percent svg{
+        position: relative;
+        width: 100px;
+        height: 100px;
+        transform: rotate(90deg);
+    }
+    .percent svg circle{
+        width: 100px;
+        height: 100px;
+        fill: none;
+        stroke-width: 5;
+        stroke:#000;
+        transform: translate(6px, 6px);
+        stroke-dasharray: 250;
+        stroke-dashoffset: 250;
+        stroke-linecap: round;
+
+        &:nth-child(1){
+            stroke-dashoffset: 0;
+            stroke: #e6e6e6;
+        }
+        &:nth-child(2){
+            stroke-dashoffset: calc(250 - (250 * 51) / 100);
+            stroke: #ffc464;
+        }
+    }
+    .percent .number{
+        position: absolute;
+        top: -4px;
+        left: 5px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "TT Norms Bold";
+        font-weight: bold;
+        line-height: 40px;
+        letter-spacing: 0.1em;
+        color: #2F2F2F;
+    }
+
+    .percent .number h2{
+        font-size: 26px;
+    }
+
+    .percent .number span{
+        font-size: 20px;
+    }
+    .text{
+        font-family: "TT Norms Bold";
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 28px;
+        color: #000000;
+    }
+    .text__price{
+        font-size: 22px;
+        span{
+            font-size: 16px;
+            color: $purple;
+        }
+    }
+}
+
+.diagnostics-box__btn{
+    padding: 19px 50px;
+    font-size: 16px;
+    line-height: 19px;
+    color: #fff;
+    background-color: #000;
+    border-radius: 15px;
+}
+.diagnostics-box__img-style{
+    position: absolute;
+    top: -100px;
+    right: 0;
+    z-index: 2;
+}
+
+
+.diagnostics-content__info{
+    font-family: "TT Norms Medium";
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 28px;
+    color: #000000;
+    padding-left: 49px;
+    position: relative;
+
+    &::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 34px;
+        height: 34px;
+        background-image: url(../images/diagnostics-icon.svg);
+        background-repeat: no-repeat;
+    }
+}
+.diagnostics-content__select{
+    display: none;
+    width: 100%;
+    text-align: center;
+    padding: 21px 28px;
+    margin-top: 25px;
+    border: 1px solid $purple;
+    border-radius: 5px;;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: -0.02em;
+    color: $purple;
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+
+    &::after{
+        content: "";
+        position: absolute;
+        right: 30px;
+        top: 28px;
+        border-top: 9px solid $purple;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+    }
+}
+
+.diagnostics-content__select--active{
+    &::after{
+        transform: rotate(180deg);
+        transition: all .6s;
+    }
+}
+
+.diagnostics-images{
+    position: absolute;
+    max-width: 100%;
+    top: -100px;
+    right: 0;
+    z-index: 1;
+}
+
+
+@media(max-width:1240px){
+    .diagnostics{
+        padding: 30px 0;
+    }
+    .diagnostics__wrapper{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+    .diagnostics__header{
+        order: 1;
+    }
+    .diagnostics-content{
+        width: 100%;
+    }
+    .diagnostics-content__list{
+        position: absolute;
+        left: 0px;
+        background-color:#fff;
+        height: 300px;
+        transform: translateY(0px);
+        opacity: 0;
+        overflow-y: auto;
+        z-index: 3;
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        transition: transform .6s;
+    }
+
+    .diagnostics-content__list--active{
+        transform: translateY(-370px);
+        opacity: 1;
+    }
+    .diagnostics-content__list-item{
+        width: 90%;
+        text-align: center;
+    }
+    .diagnostics-content__list-item-btn{
+        margin: 0 0 10px 0;
+        border-radius: 0;
+    }   
+    .diagnostics-content__info-wrapper{
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        padding-top: 120px;
+    }
+    .diagnostics-content__select{
+        display: block;
+        position: relative;
+        z-index: 4;
+    }
+    .diagnostics-images{
+        position: static;
+        margin-bottom: 20px;
+        img{
+            width: 100%;
+        }
+    }
+}
+
+@media(max-width:780px){
+
+}
+
+@media(max-width:570px){
+    .diagnostics-box{
+        padding: 50px 5px;
+        z-index: 5;
+    }
+    .diagnostics-box__img{
+        display: none;
+    }
+    .diagnostics-box__btn{
+        display: block;
+        text-align: center;
+        padding: 10px 5px;
+        width: 100%;
+    }
+    .diagnostics-content__info{
+        text-align: center;
+    }
+}
+
+@media(max-width:416px){
+    .diagnostics-box__header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .diagnostics-box__percent{
+        width: 100%;
+        justify-content: space-evenly;
+    }
+    .text{
+        display: flex;
+        flex-direction: column;
+    }
+    .text__price{
+        span{
+            display: flex;
+        }
+    }
+}
+
+
+
+@media(max-width:333px){
+    .diagnostics-box__btn{
+        font-size: 14px;
+    }
+}   

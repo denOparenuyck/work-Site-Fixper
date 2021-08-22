@@ -1,0 +1,170 @@
+.header {
+    background-color: $bg-purple;
+    padding: 20px 0px;
+    position: relative;
+    z-index: 10;
+}
+.header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__inner{
+    @extend.header__wrapper;
+}
+.nav__list {
+    @extend .header__wrapper;
+    &-item:not(:first-child){
+        margin-left: 40px;
+    }
+    &-link{
+        font-family: "TT Norms Medium";
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        cursor: pointer;
+        color: #ffffff;
+        transition: all .5s;
+    }
+    &-link:hover{
+        color: $orange;
+    }
+}
+.location {
+    @extend .header__wrapper;
+}
+.location__icon {
+    margin-right: 10px;
+}
+.location__name {
+    @extend .nav__list-link;
+    margin-right: 40px;
+}
+.location__btn {
+    border: 2px solid $orange;
+    border-radius: 15px;
+    padding: 18px 40px;
+    font-family: "TT Norms Bold";
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    color: $orange;
+}
+.location__map {
+    position: relative;
+}
+.location__map-settings {
+    position: fixed;
+    width: 1170px;
+    height: 300px;
+    top: 100px;
+    left: -100%;
+    transform: translateX(-50%);
+    transition: all .6s;
+}
+.location__map-settings-active{
+    left: 50%;
+}
+.toggle {
+    display: none;
+}
+
+
+
+
+@media (max-width:1100px){
+    .location{
+        order: -1;
+    }
+    .logo, .location__btn{
+        display: none;
+    }
+    .location__map-settings{
+        top: 60px;
+    }
+}
+@media(max-width:660px){
+    .header{
+        position: fixed;
+        padding: 15px 0 0 0;
+        width: 100%;
+        &::before{
+            content: "";
+            position: fixed;
+            width: 100%;
+            height: 50px;
+            background-color: #6e3760;
+            left: 0;
+            top: 0;
+            z-index: 3;
+        }
+    }
+    .header__menu {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        background-color: #6e3760;
+        text-align: center;
+        z-index: 2;
+    }    
+    .nav__list{
+        &-item:not(:first-child){
+            margin-left: 0px;
+        }
+        flex-direction: column;
+        padding: 10px;   
+    }
+    .nav__menu-show{
+        transition: all .6s;
+        top: 30px;
+    }
+    .location__icon,
+    .location__name{
+        position: relative;
+        z-index: 4;
+    }
+    .location__map-settings{
+        width: 100%;
+        top: 50px;
+    }
+    .toggle{
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        z-index: 4;
+    &::before, &::after, span{
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 3px;
+        background-color: #fff;
+        border-radius: 25px;
+        transition: .6s;
+    }
+    &::before{
+        top: 0;
+    }
+    &::after{
+        bottom: 0;
+    }
+    span{
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+.toggle.active::before{
+    transform: rotate(45deg);
+    top: 8px;
+}
+.toggle.active::after{
+    transform: rotate(-45deg);
+    bottom: 9px;
+}
+.toggle.active span{
+    transform: scale(0);
+    }
+}

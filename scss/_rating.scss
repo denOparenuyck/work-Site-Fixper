@@ -1,0 +1,122 @@
+.rating{
+    background-color: #fafafa;
+    padding: 50px 0;
+    padding: 100px 0;
+}
+.rating-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.rating-content__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 31.62%;
+    padding: 35px;
+    background-color: #fff;
+    border-radius: 15px;
+}
+.rating-content__figure {
+    font-family: "TT Norms";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    padding-right: 28px;
+    border-right: 1px solid #e3e3e3;
+}
+.rating-content__figure-style {
+    font-family: "TT Norms Bold";
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 40px;
+    color: #000000;
+    padding-left: 25px;
+    position: relative;
+    &::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 25px;
+        height: 24px;
+        background-image: url(../images//ranting-icon-star.svg);
+        background-repeat: no-repeat;
+    }
+    span{
+        font-size: 25px;
+    }
+}
+.rating-content__company {
+    padding-left: 29px;
+}
+
+
+@media(max-width:1180px){
+    .rating-content__box{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .rating-content__figure,.rating-content__company{
+        border: none;
+        padding: 0;
+    }
+    .rating-content__figure{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #e3e3e3;
+    }
+}
+
+
+@media(max-width:650px){
+    .rating-content{
+        justify-content: center;
+    }
+    .rating-content__box {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        width: 70%;
+        &:not(:last-child){
+            margin-bottom:25px;
+        }
+    }
+    .rating-content__figure{
+        padding-right: 20px;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-right: 1px solid #e3e3e3;
+        border-bottom:none;
+    }
+    .rating-content__company{
+        padding-left: 26px;
+    }
+}
+
+@media(max-width:520px){
+    .rating-content__box{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .rating-content__figure,.rating-content__company{
+        border: none;
+        padding: 0;
+    }
+    .rating-content__figure{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #e3e3e3;
+    }
+}

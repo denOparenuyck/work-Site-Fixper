@@ -1,0 +1,126 @@
+.workers{
+    padding: 100px 0;
+    background-color: #fafafa;
+}
+.workers-text {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.workers-text__title {
+    margin-top: 10px;
+}
+
+
+
+
+
+.workers-slider {
+    overflow: hidden;
+    margin-bottom: 35px;
+}
+
+.workers-slider__inner{
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    transition: .6s;
+}
+
+.workers-slider__item {
+    height: 100%;
+    font-size: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    border: 30px solid #fafafa;
+
+    &-img{
+        img{
+            width: 100%;
+        }
+    }
+}
+.workers-slider__item--last{
+    background-color: $purple;
+    border-radius: 15px;
+    width: 300px;
+    height: 640px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+}
+
+.workers-slider__item--last-text {
+    width: 256px;
+    height: 256px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 8px solid rgba(255, 255, 255, 0.1);
+    border-radius: 100%;
+    cursor: pointer;
+}
+.workers-slider__item--last-text__number {
+    font-family: "TT Norms Bold";
+    font-weight: bold;
+    font-size: 100px;
+    line-height: 40px;
+    letter-spacing: -0.015em;
+    color: #fff;
+    margin-bottom: 35px;
+}
+.workers-slider__item--last-text__workers {
+    font-family: "TT Norms";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+.workers-slider__item__wrapper{
+    padding: 50px 60px 50px 45px;
+}
+.workers-slider__item-name,.workers-slider__item-position{
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+}
+.workers-slider__item-position {
+    font-size: 16px;
+    margin-top: 8px;
+    margin-bottom: 25px;
+}
+.workers-slider__item-list {
+
+    li:not(:first-child){
+       margin-top: 20px; 
+    }
+
+    li{
+        font-size: 16px;
+        line-height: 19px;
+        color: $purple;
+        position: relative;
+        padding-left: 22px;
+
+        &::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 4px;
+            background-image: url(../images/icon-list.svg);
+            background-repeat: no-repeat;
+            width: 12px;
+            height: 10px;
+        }
+    }
+}
+
+
+
+
+@media (max-width:725px) {
+    .workers-slider__item__wrapper{
+        padding: 30px 10px;
+    }
+}
